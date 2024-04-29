@@ -1,5 +1,6 @@
 # moodboard git guide
 This repo is to serve as a reference for others to make their own spotify moodboard on git.
+To access the example moodboard please go to https://sebnunez98.github.io/moodboard/moodboard.html
 ### Bash cheat sheet
 **pwd** - Present working directory will show where you are
 **ls** - List files in current directory
