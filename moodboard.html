@@ -4,6 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Board Maker</title>
+    <style>
+        /* CSS Styles */
+        header h1 {
+            text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5); /* Add text shadow */
+        }
+        body {
+            background-color: #071942;
+            font-family: Arial, sans-serif; /* Specify font family */
+            margin: 0; /* Remove default margin */
+            padding: 2.5rem; /* Add padding for content */
+        }
+        .playlist-container {
+            display: grid; /* Use CSS grid for layout */
+            grid-template-columns: repeat(auto-fill, minmax(36rem, 1fr)); /* Automatically adjust column width */
+            grid-gap: 2rem; /* Add gap between grid items */
+        }
+        .playlist-content {
+            padding: 2.5rem; /* Add padding to playlist content */
+        }
+        .playlist {
+            height: auto;
+            background-color: black;
+            opacity: 0.8; /* Set initial opacity */
+            border: 0.5rem solid white; /* Add border around playlists */
+            border-radius: 1rem; /* Add border radius */
+            overflow: hidden; /* Hide overflow content */
+            transition: transform 0.3s ease; /* Smooth transition effect */
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Add box shadow */
+        }
+        .playlist:hover {
+            transform: scale(1.05); /* Scale up the playlist on hover */
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); /* Add box shadow */
+            opacity: 0.9; /* Set hover opacity */
+        }
+        .playlist:active {
+            transform: scale(1.06); /* Scale up playlist on click */
+            opacity: 1.0; /* Set hover opacity */
+        }
+        .playlist button {
+            position: absolute; /* Set position to absolute for button */
+            top: 1rem; /* Align button to top */
+            right: 1rem; /* Align button to right */
+            background-color: maroon; /* Set button background color to transparent */
+            color: white; /* Set button text color to white */
+            border: none; /* Remove button border */
+            cursor: pointer; /* Set cursor to pointer on hover */
+        }
+        .playlist button:hover {
+            color: lightgray; /* Change button text color on hover */
+        }
+        iframe {
+            width: 100%; /* Make iframes fill their parent container */
+            height: 36rem; /* Set fixed height for iframes */
+            border: none; /* Remove iframe border */
+        }
+
+        /* Styling for customizer */
+        .customizer {
+            width: 30%;
+            background-color: grey;
+            border: 0.5rem solid white; /* Add border */
+            border-radius: 1rem; /* Add border radius */
+            padding: 1rem; /* Add padding */
+            margin-bottom: 1rem; /* Add bottom margin */
+            transition: transform 0.3s ease; /* Smooth transition effect */
+        }
+        .customizer:hover {
+            transform: scale(1.05); /* Scale up the customizer on hover */
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); /* Add box shadow */
+            opacity: 0.9; /* Set hover opacity */
+        }
+        .customizer:active {
+            transform: scale(1.06); /* Scale up placustomizerylist on click */
+            opacity: 1.0; /* Set hover opacity */
+        }
+        .customizer label {
+            display: block; /* Set label as block element */
+            margin-bottom: 1rem; /* Add bottom margin */
+        }
+    </style>
 </head>
 <body>
     <!-- Explanation of HTML -->
@@ -31,24 +111,79 @@
     <!-- Introduction -->
     <header>
         <h1>Welcome to Mood Board Maker!</h1>
-        <p>This simple webpage allows you to create mood boards by embedding Spotify and Apple Music playlists.</p>
+        <p>This simple webpage allows you to create mood boards by embedding Spotify playlists.</p>
     </header>
 
-    <!-- Placeholder for first playlist -->
-    <div>
-        <!-- Embedding the first Spotify album -->
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3oRDvPfrxBRzMvvGtIsyJY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-    
-    <!-- Placeholder for second playlist -->
-    <div>
-        <!-- Embedding the second Spotify album -->
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/2WQLWxMAhwODYoYVPauW1F?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <!-- Customization Options -->
+    <div class="customizer">
+        <h2>Customization Options</h2>
+        <label for="backgroundColor">Background Color:</label>
+        <input type="color" id="backgroundColor" value="#071942"> <br>
     </div>
 
-    <div>
-        <!-- Embedding the first Apple Music album -->
-        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/around-the-world/1609438391?i=1609438415"></iframe>
+
+    <!-- Playlist Container -->
+    <div class="playlist-container">
+        <!-- Placeholder for first playlist -->
+        <div class="playlist">
+            <div class="playlist-content"> <!-- Added playlist-content -->
+                <!-- Embedding the first Spotify album -->
+		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5EFG2g2Csw020N69ax0ac7?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+        
+        <!-- Placeholder for second playlist -->
+        <div class="playlist">
+            <div class="playlist-content"> <!-- Added playlist-content -->
+
+                <!-- Embedding the second Spotify playlist -->
+		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+
     </div>
+    <script>
+    // Function to toggle the minimized state of a playlist container
+    function toggleMinimize(playlistContainer) {
+        playlistContainer.classList.toggle('minimized');
+    }
+
+    // Function to handle background color change
+    document.getElementById('backgroundColor').addEventListener('change', function() {
+        document.body.style.backgroundColor = this.value;
+        adjustFontAndBorderColor(this.value);
+    });
+
+    // Function to adjust font and border color based on background color luminance
+    function adjustFontAndBorderColor(backgroundColor) {
+        // Convert hex color to RGB
+        let r = parseInt(backgroundColor.substring(1, 3), 16);
+        let g = parseInt(backgroundColor.substring(3, 5), 16);
+        let b = parseInt(backgroundColor.substring(5, 7), 16);
+
+        // Calculate luminance
+        let luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+        // Set font and border color based on luminance
+        if (luminance > 0.5) {
+            document.body.style.color = 'black'; // Dark font color for light backgrounds
+        } else {
+            document.body.style.color = 'white'; // Light font color for dark backgrounds
+        }
+
+        // Set border color to match font color
+        let playlists = document.querySelectorAll('.playlist');
+        playlists.forEach(function(playlist) {
+            playlist.style.borderColor = document.body.style.color;
+        });
+
+        let customizer = document.querySelectorAll('.customizer');
+        customizer.forEach(function(customizer) {
+            customizer.style.borderColor = document.body.style.color;
+        });
+    }
+    // Initialize font and border color based on default background color
+        adjustFontAndBorderColor('#071942'); // Default background color
+    </script>
 </body>
 </html>
